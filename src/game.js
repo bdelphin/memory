@@ -270,7 +270,7 @@ function record_score()
     {
         // xhr pour enregistrer le score
         var xhr = new XMLHttpRequest();
-        var params = 'name='+name+'&temps='+time_elapsed;
+        var params = 'nom='+name+'&temps='+time_elapsed;
         xhr.onload = back_to_menu;
         xhr.open("post", backend_url, true);
         xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
