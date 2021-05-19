@@ -7,7 +7,7 @@
         <meta name="description" content="Memory game">
         <meta name="viewport" content="width=device-width,initial-scale=1">
 
-        <link rel="icon" href="./favicon.ico" />
+        <link rel="icon" href="./assets/favicon.ico" />
         
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -16,14 +16,16 @@
         <script src="https://kit.fontawesome.com/50dfd902e3.js" crossorigin="anonymous"></script>
 
         <!-- CSS Stylesheet -->
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="./css/style.css">
     </head>
     <body>
 
         <!-- Header -->
         <div class="screen" id="header">
             <a href="#" title="Retour au menu">
-                <img src="strawberry.webp" class="floatleft" alt="strawberry icon"><img src="banana.webp" class="floatright" alt="banana icon"><h1>Memory Game</h1>
+                <img src="./assets/strawberry.webp" class="floatleft" alt="strawberry icon">
+                <img src="./assets/banana.webp" class="floatright" alt="banana icon">
+                <h1>Memory Game</h1>
             </a>
         </div>
 
@@ -39,11 +41,18 @@
         <!-- Écran du menu -->
         <div class="screen" id="menu">
             <h2>Lancer une partie :</h2>
-            <p>Testez votre mémoire !<br/>L'objectif est de retrouver les 14 paires de fruits le plus vite possible.<br/>Choisissez la difficulté souhaitée : facile (240 secondes), normale (120 secondes) ou élevée (60 secondes) avec les boutons ci-dessous pour lancer le jeu.</p>
+            <p>Testez votre mémoire !<br/>L'objectif est de retrouver les 14 paires de fruits le plus vite possible.<br/>
+            Choisissez la difficulté souhaitée : facile (240 secondes), normale (120 secondes) ou élevée (60 secondes) avec les boutons ci-dessous pour lancer le jeu.</p>
             <button class="button" onclick="launch(240)">Difficulté facile</button>
             <button class="button" onclick="launch(120)">Difficulté normale</button>
             <button class="button" onclick="launch(60)">Difficulté élevée</button>
-            <h2><i class="fas fa-angle-down"></i><i class="fas fa-angle-up"></i><i class="fas fa-angle-down"></i><i class="fas fa-angle-up"></i><i class="fas fa-angle-down"></i></h2>
+            <h2>
+                <i class="fas fa-angle-down"></i>
+                <i class="fas fa-angle-up"></i>
+                <i class="fas fa-angle-down"></i>
+                <i class="fas fa-angle-up"></i>
+                <i class="fas fa-angle-down"></i>
+            </h2>
             <h2>Meilleurs temps :</h2>
             <div id="highscores">
                 Aucun meilleur temps enregistré.
@@ -52,7 +61,7 @@
         
         <!-- Écran de gameover -->
         <div class="screen" id="game_over">
-            <img src="./gameover.webp" alt="space invader game over">
+            <img src="./assets/gameover.webp" alt="space invader game over">
             <h2>Game over !</h2>
             <button class="button" onclick="menu()">Retour au menu</button>
         </div>
@@ -60,11 +69,11 @@
         <!-- Écran de fin -->
         <div class="screen" id="game_won">
             <!-- <img src="./gameover.webp" alt="space invader game over"> -->
-            <h2>Vous avez gagné !</h2>
-            <span id="new_highscore"></span>
+            <h2>Bravo, vous avez gagné !</h2>
+            <span id="new_highscore"><i class="fas fa-medal"></i> NOUVEAU RECORD ! <i class="fas fa-medal"></i></span>
             <h4>Partie terminée en <span id="score"></span> secondes.</h4>
             <p>Saisissez votre nom pour la postérité !</p>
-            <input type="text" id="name" name="name" required minlength="3" maxlength="50" size="20">
+            <input type="text" id="name" name="name" required minlength="3" maxlength="50" size="20"><br/>
             <button class="button" onclick="record_score()">Enregister votre score & retourner au menu</button>
         </div>
 
@@ -76,6 +85,12 @@
             <a href="https://baptistedelphin.fr/" title="Website"><i class="fas fa-globe-americas"></i></i></a>
         </div>
 
-        <script src="game.js"></script>
+        <!-- Javascript files -->
+        <script src="./js/dom.js"></script>
+        <script src="./js/global.js"></script>
+        <script src="./js/xhr.js"></script>
+        <script src="./js/game.js"></script>
+        <script src="./js/screens.js"></script>
+
     </body>
 </html> 
