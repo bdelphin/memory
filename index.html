@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <title>Memory</title>
+        <meta name="author" content="Baptiste DELPHIN">
+        <meta name="description" content="Memory game">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+
+        <link rel="icon" href="./favicon.ico" />
+        
+        <!-- Font -->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet"> 
+
+        <!-- CSS Stylesheet -->
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+
+        <h1>Memory Game</h1>
+
+        <!-- Écran de jeu -->
+        <div class="screen" id="game">
+            <div id="grid">
+
+            </div>
+            Temps restant : <span id="time_left">60</span> secondes.
+            <div id="progress_bar">
+                <div id="progress"></div>
+            </div>
+        </div>
+
+        <!-- Écran du menu -->
+        <div class="screen" id="menu">
+            <h2>Lancer une partie :</h2>
+            <button class="button" onclick="launch(240)">Difficulté facile</button>
+            <button class="button" onclick="launch(120)">Difficulté normale</button>
+            <button class="button" onclick="launch(60)">Difficulté élevée</button>
+            <h2>Meilleurs temps :</h2>
+            <div id="highscores">
+                Aucun meilleur temps enregistré.
+            </div>    
+        </div>
+        
+        <!-- Écran de gameover -->
+        <div class="screen" id="game_over">
+            <img src="./gameover.webp" alt="space invader game over">
+            <h2>Game over !</h2>
+            
+            <button class="button" onclick="menu(60)">Retour au menu</button>
+        </div>
+
+        <!-- Écran de fin -->
+        <div class="screen" id="game_won">
+            <!-- <img src="./gameover.webp" alt="space invader game over"> -->
+            <h2>Vous avez gagné !</h2>
+            <span id="new_highscore"></span>
+            <h4>Partie terminée en <span id="score"></span> secondes.</h4>
+            <p>Saisissez votre nom pour la postérité !</p>
+            <input type="text" id="name" name="name" required minlength="3" maxlength="50" size="20">
+            <button class="button" onclick="record_score()">Enregister votre score & retourner au menu</button>
+        </div>
+
+
+
+        <script src="game.js"></script>
+    </body>
+</html> 
