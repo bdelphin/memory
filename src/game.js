@@ -115,6 +115,9 @@ function refresh_progress_bar()
 
 function menu()
 {
+    // on appelle get_highscores pour mettre à jour les highscores
+    get_highscores();
+
     // on cache l'écran de jeu et on affiche l'écran de gameover
     gameover_screen.style.display = 'none';
     menu_screen.style.display = 'block'; 
