@@ -13,8 +13,9 @@ var score_span = document.getElementById('score');
 var name_input = document.getElementById('name');
 
 // variables globales
-var cards = new Array(28);
-var selected_cards = new Array(2);
+var cards = new Array(28); // les cartes sont stockées dans un tableau
+var selected_cards = new Array(2); // la "main" (2 cartes sélectionnées) aussi
+
 var clickable = true;
 
 var highscores;
@@ -43,8 +44,9 @@ function launch(time)
     time_left_span.textContent = time;
 
     // on cache l'écran de menu et on affiche l'écran de jeu
-    menu_screen.style.display = 'none'; 
-    game_screen.style.display = 'block';
+    //menu_screen.style.display = 'none'; 
+    //game_screen.style.display = 'block';
+    switch_to_screen(game_screen);
 
     // on remplit les tableaux avec des 'x'
     cards.fill('x');
@@ -119,8 +121,9 @@ function menu()
     get_highscores();
 
     // on cache l'écran de jeu et on affiche l'écran de gameover
-    gameover_screen.style.display = 'none';
-    menu_screen.style.display = 'block'; 
+    //gameover_screen.style.display = 'none';
+    //menu_screen.style.display = 'block'; 
+    switch_to_screen(menu_screen);
 }
 
 function game_over()
@@ -132,8 +135,9 @@ function game_over()
     clearInterval(refresh_interval);
 
     // on cache l'écran de jeu et on affiche l'écran de gameover
-    game_screen.style.display = 'none';
-    gameover_screen.style.display = 'block'; 
+    //game_screen.style.display = 'none';
+    //gameover_screen.style.display = 'block'; 
+    switch_to_screen(gameover_screen);
 
     //alert("Game over !");
 }
@@ -156,8 +160,9 @@ function game_won()
     clearTimeout(game_timeout);
 
     // on cache l'écran de jeu et on affiche l'écran de fin
-    game_screen.style.display = 'none';
-    gamewon_screen.style.display = 'block'; 
+    //game_screen.style.display = 'none';
+    //gamewon_screen.style.display = 'block'; 
+    switch_to_screen(gamewon_screen);
 }
 
 function click_card(event)
@@ -256,9 +261,9 @@ function back_to_menu()
         // retournons au menu !
 
         // on cache l'écran de jeu et on affiche l'écran de fin
-        menu_screen.style.display = 'block';
-        gamewon_screen.style.display = 'none'; 
-
+        //menu_screen.style.display = 'block';
+        //gamewon_screen.style.display = 'none'; 
+        switch_to_screen(menu_screen);
     }
 }
 
@@ -283,6 +288,18 @@ function record_score()
     
 }
 
+function switch_to_screen(screen)
+{
+    // pour changer d'écran, on commence
+    // par cacher TOUS les écrans !
+    menu_screen.style.display = 'none';
+    gamewon_screen.style.display = 'none'; 
+    gameover_screen.style.display = 'none';
+    game_screen.style.display = 'none';
+
+    // puis on affiche l'écran souhaité
+    screen.style.display = 'block';
+}
 
 // class Card
 // {

@@ -9,22 +9,27 @@
 
         <link rel="icon" href="./favicon.ico" />
         
-        <!-- Font -->
+        <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet"> 
+        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/50dfd902e3.js" crossorigin="anonymous"></script>
 
         <!-- CSS Stylesheet -->
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
 
-        <h1>Memory Game</h1>
+        <!-- Header -->
+        <div class="screen" id="header">
+            <a href="#" title="Retour au menu">
+                <img src="strawberry.webp" class="floatleft" alt="strawberry icon"><img src="banana.webp" class="floatright" alt="banana icon"><h1>Memory Game</h1>
+            </a>
+        </div>
 
         <!-- Écran de jeu -->
         <div class="screen" id="game">
-            <div id="grid">
-
-            </div>
+            <div id="grid"></div>
             Temps restant : <span id="time_left">60</span> secondes.
             <div id="progress_bar">
                 <div id="progress"></div>
@@ -34,9 +39,11 @@
         <!-- Écran du menu -->
         <div class="screen" id="menu">
             <h2>Lancer une partie :</h2>
+            <p>Testez votre mémoire !<br/>L'objectif est de retrouver les 14 paires de fruits le plus vite possible.<br/>Choisissez la difficulté souhaitée : facile (240 secondes), normale (120 secondes) ou élevée (60 secondes) avec les boutons ci-dessous pour lancer le jeu.</p>
             <button class="button" onclick="launch(240)">Difficulté facile</button>
             <button class="button" onclick="launch(120)">Difficulté normale</button>
             <button class="button" onclick="launch(60)">Difficulté élevée</button>
+            <h2><i class="fas fa-angle-down"></i><i class="fas fa-angle-up"></i><i class="fas fa-angle-down"></i><i class="fas fa-angle-up"></i><i class="fas fa-angle-down"></i></h2>
             <h2>Meilleurs temps :</h2>
             <div id="highscores">
                 Aucun meilleur temps enregistré.
@@ -47,8 +54,7 @@
         <div class="screen" id="game_over">
             <img src="./gameover.webp" alt="space invader game over">
             <h2>Game over !</h2>
-            
-            <button class="button" onclick="menu(60)">Retour au menu</button>
+            <button class="button" onclick="menu()">Retour au menu</button>
         </div>
 
         <!-- Écran de fin -->
@@ -62,7 +68,13 @@
             <button class="button" onclick="record_score()">Enregister votre score & retourner au menu</button>
         </div>
 
-
+        <!-- Footer -->
+        <div class="screen" id="footer">
+            <a href="https://github.com/bdelphin/memory/" title="Github"><i class="fab fa-github"></i></a>
+            <a href="https://hub.docker.com/repository/docker/bdelphin/memory/" title="Docker"><i class="fab fa-docker"></i></a>
+            <a href="https://twitter.com/chewb4president" title="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="https://baptistedelphin.fr/" title="Website"><i class="fas fa-globe-americas"></i></i></a>
+        </div>
 
         <script src="game.js"></script>
     </body>
