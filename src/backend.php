@@ -18,11 +18,11 @@
 
 // Ceci aurait dû empêcher les accès à l'API depuis l'extérieur, mais à cause
 // du réseau Ingress de docker swarm cela ne fonctionne pas ...
-if($_SERVER['REMOTE_ADDR'] != '127.0.0.1' || !str_starts_with($_SERVER['REMOTE_ADDR'], '10.0.0.'))
+/*if($_SERVER['REMOTE_ADDR'] != '127.0.0.1' || !str_starts_with($_SERVER['REMOTE_ADDR'], '10.0.0.'))
 {
     echo "Host ".$_SERVER['REMOTE_ADDR']." unauthorized.";
     die;
-}
+}*/
 
 
 // On commence par vérifier si la variable d'environnement DB_PROVIDER 
