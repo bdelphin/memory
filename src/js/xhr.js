@@ -62,6 +62,11 @@ function back_to_menu()
         //gamewon_screen.style.display = 'none'; 
         switch_to_screen(menu_screen);
     }
+    else
+    {
+        alert("Erreur : le temps n'a pas pu être enregistré en base de donnée.");
+        switch_to_screen(menu_screen);
+    }
 }
 
 // Cette fonction fait une requête POST au backend
@@ -84,7 +89,5 @@ function record_score()
         xhr.open("post", backend_url, true);
         xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
         xhr.send(params);
-
     }
-    
 }

@@ -113,7 +113,13 @@ else
 // s'il y a des données en POST, c'est qu'on envoie un nouveau highscore.
 // on utilise !empty() plutôt que isset() afin de gérer le fait que les
 // paramètres peuvent être définis mais tout de même vides.
-if(!empty($_POST["nom"]) && !empty($_POST["temps"]))
+//
+// Les deux lignes ci-dessus ne sont plus d'actualité. Pour une raison que
+// je ne m'explique pas, !empty() ne fonctionne plus.
+// Aucune modification n'a été fait coté XHR ¯\_(ツ)_/¯
+
+//if(!empty($_POST["nom"]) && !empty($_POST["temps"]))
+if(isset($_POST["nom"]) && isset($_POST["temps"]))
 {
     // si les paramètres ne sont pas vides, on les insère dans la table.
     // on utilise ici une requête préparée pour se protéger des injections
