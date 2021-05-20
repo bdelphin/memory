@@ -17,8 +17,9 @@
  */
 
 
-if($_SERVER['REMOTE_ADDR'] != '127.0.0.1')
+if($_SERVER['REMOTE_ADDR'] != '127.0.0.1' || $_SERVER['REMOTE_ADDR'] != 'memory.bdelph.in')
 {
+    echo "Host ".$_SERVER['REMOTE_ADDR']." unauthorized.";
     die;
 }
 
