@@ -17,6 +17,12 @@
  */
 
 
+if($_SERVER['REMOTE_ADDR'] != '127.0.0.1')
+{
+    die;
+}
+
+
 // On commence par vérifier si la variable d'environnement DB_PROVIDER 
 // est définie ou non
 if (getenv("DB_PROVIDER") === false || getenv("DB_PROVIDER") == "SQLite")
