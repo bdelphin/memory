@@ -80,10 +80,10 @@ Vous pouvez accèder aux statistiques du load balancer [ici](http://memory.bdelp
 Voici un schéma de l'infrastructure : 
 TODO: ajouter schéma
 
-Ceci permet d'atteindre une haute disponibilité et de pouvoir supporter facilement des montée en charge éventuelles (il suffit par exemple de rajouter de nouvelles machines au cluster).
+Ceci permet d'atteindre une haute disponibilité et de pouvoir supporter facilement des montées en charge éventuelles (il suffit par exemple de rajouter de nouvelles machines au cluster).
 Ce n'est bien sûr absoluement pas nécessaire pour ce jeu.
 
-Le cluster Docker Swarm est administré par Portainer, et les images Docker du jeu sont automatiquement mises à jour dès qu'une nouvelle révision de l'image est publiée sur le Docker Hub (Déploiement continu).
+Le cluster Docker Swarm est administré par Portainer, et les images Docker du jeu sont automatiquement mises à jour dès qu'une nouvelle révision de l'image est publiée sur le Docker Hub (déploiement continu).
 
 ## Améliorations possibles
 
