@@ -1,0 +1,23 @@
+version: "3.7"
+
+services:
+  game:
+    image: bdelphin/memory
+    ports:
+      - 8080:80
+    environment:
+      DB_PROVIDER: MySQL
+      MYSQL_HOST: mysql
+      MYSQL_USER: root
+      MYSQL_PASSWORD: secret
+      MYSQL_DB: memory
+  mysql:
+    image: mysql:8
+    volumes:
+      - mysql-data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: secret
+      MYSQL_DATABASE: memory
+
+volumes:
+  mysql-data:

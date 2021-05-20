@@ -53,6 +53,9 @@ function back_to_menu()
     {
         // le score a bien été enregistré
         // retournons au menu !
+        
+        // on met à jour les highscores 
+        get_highscores();
 
         // on cache l'écran de jeu et on affiche l'écran de fin
         //menu_screen.style.display = 'block';

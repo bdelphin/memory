@@ -49,9 +49,10 @@ Si vous souhaitez utiliser MariaDB ou MySQL à la place d'un simple fichier SQLi
 - MYSQL_HOST : le nom d'hôte ou l'adresse IP de la machine hébergeant MySQL ou MariaDB. Peut être localhost si le SGBD est sur la même machine que le serveur web.
 - MYSQL_USER : le nom d'utilisateur à utiliser pour se connecter au SGBD.
 - MYSQL_PASSWORD : le mot de passe de cet utilisateur.
-- MYSQL_DB : le nom de la base de données à utiliser. Si elle n'existe pas, elle sera créée.
+- MYSQL_DB : le nom de la base de données à utiliser. Elle doit avoir été créée en amont !
 
 Ces variables d'environnement seront lues par PHP afin de pouvoir utiliser MySQL ou MariaDB.
+Attention, ces variables d'environnement seront lues avec l'utilisateur système utilisé par Apache/PHP (www-data généralement). Une possibilité pour les définir est d'activer mod_env sur Apache et créer un fichier .htaccess pour les définir (plus d'infos [ici](https://stackoverflow.com/questions/17550223/set-an-environment-variable-in-htaccess-and-retrieve-it-in-php).). Cette configuration n'est pas nécessaire avec Docker.
 
 Le plus simple reste encore une fois d'utiliser Docker, plus particulièrement Docker Compose. La base de données MySQL sera hébergée dans son propre conteneur et sera sur le même réseau que le conteneur hébergeant l'application. Un fichier docker-compose.yml est fourni à la racine de ce projet, dans lequel les variables d'environnement sont préconfigurées.
 Lancez les commandes suivantes :
