@@ -14,7 +14,12 @@ function menu()
 {
     // on appelle get_highscores pour mettre à jour les highscores
     get_highscores();
-
+    
+    // on stoppe le refresh de la progress bar et on stop le chrono du jeu
+    // (nécessaire si on quitte le jeu en cours de partie)
+    clearInterval(refresh_interval);
+    clearTimeout(game_timeout);
+    
     // on affiche l'écran du menu 
     switch_to_screen(menu_screen);
 }
