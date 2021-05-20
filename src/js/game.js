@@ -119,7 +119,7 @@ function click_card(event)
     // si les cartes sont clickables
     if (clickable == true)
     {
-        card.style.backgroundImage = "url(./cards.png)";
+        card.style.backgroundImage = "url(../assets/cards.png)";
         if(selected_cards[0] == 'x')
         {
             // on vient de sélectionner la première carte
