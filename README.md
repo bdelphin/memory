@@ -28,7 +28,7 @@ Cette image est compilée automatiquement et mise à disposition sur le Docker H
 
 Sur une machine sur laquelle Docker est installé, lancez la commande suivante :
 ```
-docker run -dp 8080:80 --name memory bdelphin/memory
+docker run -dp 8080:80 --name -v memory_db:/var/www/html/db/ memory bdelphin/memory
 ```
 Vous pouvez ensuite ouvrir [http://localhost:8080/](http://localhost:8080/) dans votre navigateur web.
 
@@ -43,15 +43,23 @@ Connectez-vous à ce service avec un compte Docker Hub et lancez simplement la c
 Si vous souhaitez héberger le jeu sur un serveur web classique (Apache, Nginx, etc.) vous devrez cloner le dépôt et copier les fichiers du dossier src/ à la racine de votre serveur web.
 Les exentions PDO pour SQLite/MySQL devront être activées dans le fichier de configuration de PHP.
 
-## Utiliser MySQL/MariaDB plutôt que SQLite -> TODO
+## Pertistence des données
+
+La persistence des données est gérée par le montage d'un volume Docker sur /var/www/html/db/. 
+Le conteneur peut être stoppé et redemarré sans que les données soient perdues !
+
+La base de données SQLite n'est pas protégée est peut être téléchargée en tapant son URL dans un navigateur. Ce n'est pas un problème dans notre cas : seuls les temps des joueurs y sont stockés. Dans une application sérieuse, il faudrait placer le fichier SQLite hors de la racine du serveur web (ou sécuriser l'accès au dossier db depuis la configuration du serveur web).
+
+## Utiliser MySQL/MariaDB plutôt que SQLite
 
 Si vous souhaitez utiliser MariaDB ou MySQL à la place d'un simple fichier SQLite, il faut simplement paramétrer les variables d'environnement suivantes :
+- DB_PROVIDER : le SGBD à utiliser, au choix entre MariaDB, MySQL et SQLite. Si cette variable n'est pas définie, SQLite sera le choix par défaut.
 - MYSQL_HOST : le nom d'hôte ou l'adresse IP de la machine hébergeant MySQL ou MariaDB. Peut être localhost si le SGBD est sur la même machine que le serveur web.
 - MYSQL_USER : le nom d'utilisateur à utiliser pour se connecter au SGBD.
 - MYSQL_PASSWORD : le mot de passe de cet utilisateur.
 - MYSQL_DB : le nom de la base de données à utiliser. Elle doit avoir été créée en amont !
 
-Ces variables d'environnement seront lues par PHP afin de pouvoir utiliser MySQL ou MariaDB.
+Ces variables d'environnement indiqueront à PHP d'utiliser MySQL, MariaDB ou SQLite.
 Attention, ces variables d'environnement seront lues avec l'utilisateur système utilisé par Apache/PHP (www-data généralement). Une possibilité pour les définir est d'activer mod_env sur Apache et créer un fichier .htaccess pour les définir (plus d'infos [ici](https://stackoverflow.com/questions/17550223/set-an-environment-variable-in-htaccess-and-retrieve-it-in-php).). Cette configuration n'est pas nécessaire avec Docker.
 
 Le plus simple reste encore une fois d'utiliser Docker, plus particulièrement Docker Compose. La base de données MySQL sera hébergée dans son propre conteneur et sera sur le même réseau que le conteneur hébergeant l'application. Un fichier docker-compose.yml est fourni à la racine de ce projet, dans lequel les variables d'environnement sont préconfigurées.
