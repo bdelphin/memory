@@ -27,7 +27,7 @@ if (getenv("DB_PROVIDER") === false || getenv("DB_PROVIDER") == "SQLite")
     {
         // connexion à la DB SQLite
         // le fichier sera créé s'il n'existe pas.
-        $pdo = new PDO('sqlite:'.dirname(__FILE__).'/db.sqlite');
+        $pdo = new PDO('sqlite:'.dirname(__FILE__).'/db/db.sqlite');
         $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
