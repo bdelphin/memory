@@ -107,10 +107,10 @@ sudo systemctl status haproxy
 TODO.
 
 
-# Liens utiles :
+# Liens utiles / sources :
 
-https://docs.docker.com/engine/swarm/swarm-tutorial/
-https://docs.docker.com/engine/swarm/swarm-tutorial/create-swarm/
-https://documentation.portainer.io/v2.0/deploy/ceinstallswarm/
-https://docs.docker.com/engine/install/debian/
+https://docs.docker.com/engine/swarm/swarm-tutorial/ <br/>
+https://docs.docker.com/engine/swarm/swarm-tutorial/create-swarm/ <br/>
+https://documentation.portainer.io/v2.0/deploy/ceinstallswarm/ <br/>
+https://docs.docker.com/engine/install/debian/ <br/>
 https://docs.docker.com/engine/swarm/ingress/#configure-an-external-load-balancer
