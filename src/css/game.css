@@ -1,0 +1,50 @@
+/*
+ *  MEMORY
+ *  fichier game.css
+ *  
+ *  Ce fichier contient le code CSS utilisé sur 
+ *  l'écran de jeu.
+ *
+ *  Baptiste DELPHIN - Mai 2021
+ *
+ */
+
+#grid
+{
+    display: grid;
+    grid-template-columns: repeat(7, 100px);
+    grid-template-rows: repeat(4, 100px);
+    grid-gap: 10px 10px;
+    margin-bottom: 20px;
+}
+
+.cell
+{
+    background-color: #9e9e9e;
+    width: 100px;
+    height: 100px;
+}
+
+.cell:hover
+{
+    background-color: #5e5e5e;
+    cursor: pointer;
+}
+
+#progress_bar
+{
+    margin-top: 5px;
+    border: 1px solid #ccc;
+}
+
+#progress
+{
+    color: #000;
+    background-color: #9e9e9e;
+    height: 24px;
+
+    /* On fait avancer la progress bar en modifiant la
+     * propriété width ci-dessous depuis Javascript. */
+    width: 0%;
+}
+

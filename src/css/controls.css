@@ -1,0 +1,51 @@
+/*
+ *  MEMORY
+ *  fichier controls.css
+ *  
+ *  Ce fichier contient le code CSS utilisé pour 
+ *  modifier le design des controles HTML tels
+ *  que les liens, boutons, champs texte, etc.
+ *
+ *  Baptiste DELPHIN - Mai 2021
+ *
+ */
+
+a
+{
+    color: black;
+    text-decoration: none;
+}
+
+a:hover
+{
+    color: gray;
+}
+
+input, button
+{
+    border-radius: 0;
+    padding: 8px 30px 5px 30px;
+    border: none;
+    margin: 10px;
+    font-family: 'Bebas Neue', cursive;
+    text-align: center !important;
+}
+
+input:focus
+{
+    border-radius: 0;
+    border: 1px solid gray;
+}
+
+#input_error
+{
+    display: none;
+    color: red;
+    font-size: 0.8rem;
+}
+
+button:hover
+{
+    cursor: pointer;
+    background-color: gray;
+}
