@@ -140,6 +140,8 @@ TODO: ajouter schéma
 Le jeu accessible à l'adresse [http://memory.bdelph.in](http://memory.bdelph.in) est hébergé sur un cluster Docker Swarm composé de 3 machines virtuelles AWS EC2.
 Chaque machine du Swarm héberge deux réplicats (deux conteneurs faisant tourner l'image Docker du jeu) et le réseau est configuré en mode "Ingress" (le load balancer interne de Docker Swarm).
 
+![capture d'écran cluster Docker Swarm](swarm_cluster.png)
+
 Un load balancer (répartiteur de charge) HAproxy est installé sur une 4ème machine virtuelle, sur laquelle pointe le nom de domaine memory.bdelph.in.
 Vous pouvez accéder aux statistiques de HAproxy [ici](http://memory.bdelph.in/haproxy?stats).
 
