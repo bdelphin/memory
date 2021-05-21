@@ -4,7 +4,7 @@ Une implémentation simple en HTML/CSS/JS & PHP (pour la gestion des meilleurs t
 
 ![screenshot](screenshot.png)
 
-Vous pouvez accéder à la dernière version du jeu ici : [http://memory.bdelph.in](http://memory.bdelph.in)
+Vous pouvez accéder à la dernière version du jeu ici : [http://memory.bdelph.in](http://memory.bdelph.in)<br/>
 (vous trouverez plus d'informations sur le fonctionnement de cet hébergement ci-dessous)
 
 ## Règle du jeu
@@ -111,7 +111,8 @@ Si vous souhaitez utiliser MariaDB ou MySQL à la place d'un simple fichier SQLi
 - **MYSQL_DB** : le nom de la base de données à utiliser. Elle doit avoir été créée en amont !
 
 Ces variables d'environnement indiqueront à PHP d'utiliser MySQL, MariaDB ou SQLite.
-Attention, ces variables d'environnement seront lues avec l'utilisateur système utilisé par Apache/PHP (www-data généralement). Une possibilité pour les définir est d'activer mod_env sur Apache et créer un fichier .htaccess pour les définir (plus d'infos [ici](https://stackoverflow.com/questions/17550223/set-an-environment-variable-in-htaccess-and-retrieve-it-in-php).). Cette configuration n'est pas nécessaire avec Docker.
+Attention, ces variables d'environnement seront lues avec l'utilisateur système utilisé par Apache/PHP (www-data généralement).<br/>
+Une possibilité pour les définir est d'activer mod_env sur Apache et créer un fichier .htaccess pour les définir (plus d'infos [ici](https://stackoverflow.com/questions/17550223/set-an-environment-variable-in-htaccess-and-retrieve-it-in-php)). Cette configuration n'est pas nécessaire avec Docker.
 
 **Le plus simple reste encore une fois d'utiliser Docker, plus particulièrement Docker Compose.** 
 
@@ -147,10 +148,10 @@ Une 5ème machine virtuelle héberge une base de données MariaDB.
 Voici un schéma de l'infrastructure : 
 ![schéma de l'infratructure](infrastructure_diagram.gif)
 
-Cette infrastructure est décrite dans la [documentation officielle de Docker](https://docs.docker.com/engine/swarm/ingress/).
+Cette infrastructure est décrite dans la [documentation officielle de Docker](https://docs.docker.com/engine/swarm/ingress/).<br/>
 Elle permet d'atteindre une haute disponibilité et de pouvoir supporter facilement des montées en charge éventuelles (il suffit par exemple de rajouter de nouvelles machines au cluster, ou augmenter le nombre de réplicats). Ce n'est bien sûr absolument pas nécessaire pour ce jeu.
 
-Le cluster Docker Swarm est administré par Portainer, et les images Docker du jeu sont automatiquement mises à jour dès qu'une nouvelle révision de l'image est publiée sur le Docker Hub (déploiement continu).
+Le cluster Docker Swarm est administré par Portainer, et les images Docker du jeu sont automatiquement mises à jour dès qu'une nouvelle révision de l'image est publiée sur le Docker Hub (déploiement continu).<br/>
 Sachant que l'image Docker est compilée et publiée automatiquement par Docker Hub à chaque push sur la branche main du dépôt Github, à chaque nouveau commit/push de mon code la production est mise à jour (sur un projet plus important il ne faut bien entendu pas travailler directement sur la branche de production du dépôt Github mais plutôt sur une branche dédiée au dév).
 
 ## Améliorations possibles
