@@ -83,14 +83,15 @@ TODO: ajouter schéma
 ## Hébergement memory.bdelph.in / Déploiement continu
 
 Le jeu accessible à l'adresse [http://memory.bdelph.in](http://memory.bdelph.in) est hébergé sur un cluster Docker Swarm composé de 3 machines virtuelles AWS EC2.
+Chaque machine du Swarm héberge deux réplicats (deux conteneurs faisant tourner l'image Docker du jeu) et le réseau est configuré en mode "Ingress" (le load balancer interne de Docker Swarm).
 Un load balancer (répartiteur de charge) HAproxy est installé sur une 4ème machine virtuelle, sur laquelle pointe le nom de domaine memory.bdelph.in.
-Vous pouvez accèder aux statistiques du load balancer [ici](http://memory.bdelph.in/haproxy?stats).
+Vous pouvez accéder aux statistiques de HAproxy [ici](http://memory.bdelph.in/haproxy?stats).
 
 Voici un schéma de l'infrastructure : 
-TODO: ajouter schéma
+![schéma de l'infratructure](infrastructure_diagram.gif)
 
-Ceci permet d'atteindre une haute disponibilité et de pouvoir supporter facilement des montées en charge éventuelles (il suffit par exemple de rajouter de nouvelles machines au cluster).
-Ce n'est bien sûr absoluement pas nécessaire pour ce jeu.
+Cette infrastructure est expliquée plus en détailt dans la documentation officielle de Docker [ici](https://docs.docker.com/engine/swarm/ingress/).
+Elle permet d'atteindre une haute disponibilité et de pouvoir supporter facilement des montées en charge éventuelles (il suffit par exemple de rajouter de nouvelles machines au cluster, ou augmenter le nombre de réplicats). Ce n'est bien sûr absoluement pas nécessaire pour ce jeu.
 
 Le cluster Docker Swarm est administré par Portainer, et les images Docker du jeu sont automatiquement mises à jour dès qu'une nouvelle révision de l'image est publiée sur le Docker Hub (déploiement continu).
 
