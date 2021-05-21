@@ -32,6 +32,7 @@ Le dépôt contient l'arborescence suivante :
 ├── docs
 │   ├── algorithm.drawio
 │   ├── algorithm.png
+│   ├── guide_infra.md
 │   ├── infrastructure_diagram.gif
 │   ├── network.drawio
 │   ├── screenshot.png
@@ -59,7 +60,7 @@ Le dépôt contient l'arborescence suivante :
         └── xhr.js
 ```
 
-Le code source du jeu se trouve dans le dossier src/, et est divisé de la sorte :
+Le code source du jeu se trouve dans le dossier `src/`, et est divisé de la sorte :
 - à la racine du dossier : le fichier index.html et le fichier backend.php
 - le dossier assets/ : les ressources graphiques utilisées par le jeu
 - le dossier css/ : les fichiers CSS, permettant de définir le "style" du jeu
