@@ -1,9 +1,12 @@
-<mxfile host="app.diagrams.net" modified="2021-05-21T15:27:35.354Z" agent="5.0 (X11)" etag="hCaRLL3-bwssoSsnxxyi" version="14.6.13" type="github">
+<mxfile host="app.diagrams.net" modified="2021-05-21T15:50:18.017Z" agent="5.0 (X11)" etag="U7H8GV1PjelWN4GwzwSn" version="14.6.13" type="github">
   <diagram id="Mho7VbrldvnrTyEdaJBi" name="Page-1">
-    <mxGraphModel dx="2297" dy="1253" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="2205" dy="752" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
+        <mxCell id="lv7PpkQllb6Zml0wK7hn-37" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="270" y="130" width="750" height="1000" as="geometry" />
+        </mxCell>
         <mxCell id="lv7PpkQllb6Zml0wK7hn-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="lv7PpkQllb6Zml0wK7hn-1" target="lv7PpkQllb6Zml0wK7hn-2">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
@@ -109,6 +112,118 @@
         </mxCell>
         <mxCell id="lv7PpkQllb6Zml0wK7hn-24" value="&lt;div&gt;On cache les cartes sélectionnées.&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Les cartes sont de nouveau clickables.&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;On vide la &quot;main&quot;.&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="473" y="888" width="140" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="lv7PpkQllb6Zml0wK7hn-46" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="lv7PpkQllb6Zml0wK7hn-39" target="lv7PpkQllb6Zml0wK7hn-40">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lv7PpkQllb6Zml0wK7hn-39" value="Lancement du jeu" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-480" y="161" width="140" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="lv7PpkQllb6Zml0wK7hn-47" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="lv7PpkQllb6Zml0wK7hn-40" target="lv7PpkQllb6Zml0wK7hn-42">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="-410" y="440" />
+              <mxPoint x="-305" y="440" />
+              <mxPoint x="-305" y="340" />
+              <mxPoint x="-200" y="340" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lv7PpkQllb6Zml0wK7hn-40" value="&lt;div&gt;On réinitialise les paramètres du jeu.&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;On met à jour le temps imparti en fonction de la difficulté choisie.&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;On vide la &quot;main&quot; et on vide le tableau qui stocke la position des cartes.&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-480" y="250" width="140" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="lv7PpkQllb6Zml0wK7hn-49" value="non" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="lv7PpkQllb6Zml0wK7hn-41" target="lv7PpkQllb6Zml0wK7hn-43">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lv7PpkQllb6Zml0wK7hn-74" value="oui" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="lv7PpkQllb6Zml0wK7hn-41" target="lv7PpkQllb6Zml0wK7hn-68">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lv7PpkQllb6Zml0wK7hn-41" value="28 cartes tirées&lt;br&gt;au hasard ?" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-270" y="450" width="140" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="lv7PpkQllb6Zml0wK7hn-48" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="lv7PpkQllb6Zml0wK7hn-42" target="lv7PpkQllb6Zml0wK7hn-41">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lv7PpkQllb6Zml0wK7hn-42" value="&lt;div&gt;Nb cartes tirées au &lt;br&gt;&lt;/div&gt;&lt;div&gt;hasard X = 0&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-270" y="370" width="140" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="lv7PpkQllb6Zml0wK7hn-50" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="lv7PpkQllb6Zml0wK7hn-43" target="lv7PpkQllb6Zml0wK7hn-44">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lv7PpkQllb6Zml0wK7hn-43" value="&lt;div&gt;Nb cartes tirées au &lt;br&gt;&lt;/div&gt;&lt;div&gt;hasard X = X+1&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-270" y="560" width="140" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="lv7PpkQllb6Zml0wK7hn-51" value="non" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="lv7PpkQllb6Zml0wK7hn-44" target="lv7PpkQllb6Zml0wK7hn-45">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lv7PpkQllb6Zml0wK7hn-73" value="oui" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="lv7PpkQllb6Zml0wK7hn-44">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-70" y="680" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lv7PpkQllb6Zml0wK7hn-44" value="&lt;div&gt;carte à la position&lt;/div&gt;&lt;div&gt;X déjà définie ?&lt;br&gt;&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-270" y="640" width="140" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="lv7PpkQllb6Zml0wK7hn-55" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="lv7PpkQllb6Zml0wK7hn-45" target="lv7PpkQllb6Zml0wK7hn-52">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lv7PpkQllb6Zml0wK7hn-45" value="On tire une carte au hasard." style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-270" y="758" width="140" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="lv7PpkQllb6Zml0wK7hn-56" value="oui" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="lv7PpkQllb6Zml0wK7hn-52" target="lv7PpkQllb6Zml0wK7hn-45">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-200" y="820" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lv7PpkQllb6Zml0wK7hn-63" value="non" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="lv7PpkQllb6Zml0wK7hn-52" target="lv7PpkQllb6Zml0wK7hn-57">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lv7PpkQllb6Zml0wK7hn-52" value="&lt;div&gt;Carte déjà sur le &lt;br&gt;&lt;/div&gt;&lt;div&gt;plateau ?&lt;br&gt;&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-270" y="840" width="140" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="lv7PpkQllb6Zml0wK7hn-61" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="lv7PpkQllb6Zml0wK7hn-57" target="lv7PpkQllb6Zml0wK7hn-58">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lv7PpkQllb6Zml0wK7hn-57" value="on place cette carte à la position X sur le plateau." style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-270" y="960" width="140" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="lv7PpkQllb6Zml0wK7hn-62" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="lv7PpkQllb6Zml0wK7hn-58" target="lv7PpkQllb6Zml0wK7hn-59">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lv7PpkQllb6Zml0wK7hn-58" value="on tire au hasard la position de la 2ème carte qui compose la paire. " style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-270" y="1030" width="140" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="lv7PpkQllb6Zml0wK7hn-60" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="lv7PpkQllb6Zml0wK7hn-59" target="lv7PpkQllb6Zml0wK7hn-58">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lv7PpkQllb6Zml0wK7hn-64" value="non" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="lv7PpkQllb6Zml0wK7hn-60">
+          <mxGeometry x="-0.2219" y="-1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lv7PpkQllb6Zml0wK7hn-66" value="oui" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="lv7PpkQllb6Zml0wK7hn-59" target="lv7PpkQllb6Zml0wK7hn-65">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lv7PpkQllb6Zml0wK7hn-59" value="&lt;div&gt;Position libre sur &lt;br&gt;&lt;/div&gt;&lt;div&gt;le plateau ?&lt;br&gt;&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-270" y="1109" width="140" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="lv7PpkQllb6Zml0wK7hn-67" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="lv7PpkQllb6Zml0wK7hn-65" target="lv7PpkQllb6Zml0wK7hn-41">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="-200" y="1300" />
+              <mxPoint x="-70" y="1300" />
+              <mxPoint x="-70" y="490" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lv7PpkQllb6Zml0wK7hn-65" value="on place la carte à cette position sur le plateau." style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-270" y="1230" width="140" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="lv7PpkQllb6Zml0wK7hn-68" value="On créé les 28 cellules&lt;br&gt;de la grille (tableau de jeu)." style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-480" y="540" width="140" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="lv7PpkQllb6Zml0wK7hn-69" value="&lt;div&gt;On démarre le chrono&lt;/div&gt;&lt;div&gt;du jeu.&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-590" y="630" width="140" height="50" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
