@@ -130,10 +130,15 @@ Pour stopper les conteneurs, lancez la commande :
 docker-compose down
 ```
 
-## Algorithme du jeu -> TODO
+## Algorithme(s) du jeu
 
-Voici un schéma décrivant l'algorithme utilisé par ce jeu.
-TODO: ajouter schéma
+La partie algorithmique (codée en Javascript) du jeu est relativement simple. On retrouve quelques fonctions permettant de changer d'écran (pour passer du menu au jeu, du jeu à l'écran de gameover, etc.) mais les deux fonctions principales (et les plus complexes) sont :
+- launch(time) : cette fonction permet de lancer une nouvelle partie. Elle attend en paramètre (time) le temps imparti, qui dépend de la difficulté choisie par le joueur (60 secondes pour une partie difficile, 120 pour une partie normale et 240 pour une partie facile). Elle est chargée de générer le plateau de jeu et de placer au hasard les 14 paires de cartes sur ce dernier.
+- click_card(event) : cette fonction est déclenchée quand le joueur clic sur une carte du plateau.
+
+Vous trouverez ci-dessous le fonctionnement détaillé de ces deux fonctions, sous la forme de logigramme :
+![Logigramme détaillant l'algorithmie du jeu](algorithm.png)
+(cliquez sur l'image pour l'ouvrir en grand)
 
 ## Hébergement memory.bdelph.in / Déploiement continu
 
@@ -150,7 +155,7 @@ Une 5ème machine virtuelle héberge une base de données MariaDB.
 Voici un schéma de l'infrastructure : 
 ![schéma de l'infratructure](infrastructure_diagram.gif)
 
-Cette infrastructure est décrite dans la [documentation officielle de Docker](https://docs.docker.com/engine/swarm/ingress/).<br/>
+Cette infrastructure est décrite dans la [documentation officielle de Docker](https://docs.docker.com/engine/swarm/ingress/#using-the-routing-mesh).<br/>
 Elle permet d'atteindre une haute disponibilité et de pouvoir supporter facilement des montées en charge éventuelles (il suffit par exemple de rajouter de nouvelles machines au cluster, ou augmenter le nombre de réplicats). Ce n'est bien sûr absolument pas nécessaire pour ce jeu.
 
 Le cluster Docker Swarm est administré par Portainer, et les images Docker du jeu sont automatiquement mises à jour dès qu'une nouvelle révision de l'image est publiée sur le Docker Hub (déploiement continu).<br/>
