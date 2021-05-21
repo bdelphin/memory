@@ -1,5 +1,5 @@
 /*
- *  Memory Game
+ *  MEMORY
  *  fichier xhr.js
  *  
  *  Ce fichier contient les fonctions effectuant 
@@ -26,7 +26,30 @@ function update_highscore_menu()
         // on parcourt le JSON avec un forEach
         highscores.forEach((item, index) => {
             var li = document.createElement("li");
-            li.textContent = '#' + (index+1) + ' - ' + item['nom'] + ' : ' + item['temps'] + ' secondes.';
+            var span = document.createElement("span");
+
+            // le backend nous renvoi des highscores triés par ordre croissant
+            // on peut donc utiliser l'index pour déterminer le "podium"
+            if(index == 0)
+            {
+                // première place : médaille d'or
+                li.innerHTML = '<i class="fas fa-medal" style="color: #DAA520;"></i>';
+                span.textContent = ' ' + item['nom'] + ' : ' + item['temps'] + ' secondes.';
+            }
+            else if(index == 1)
+            {
+                // seconde place : médaille d'argent
+                li.innerHTML = '<i class="fas fa-medal" style="color: #C0C0C0;"></i>';
+                span.textContent = ' ' + item['nom'] + ' : ' + item['temps'] + ' secondes.';
+            }
+            else if(index == 2)
+            {
+                // troisième place : médaille de bronze
+                li.innerHTML = '<i class="fas fa-medal" style="color: #cd7f32;"></i>';
+                span.textContent = ' ' + item['nom'] + ' : ' + item['temps'] + ' secondes.';
+            }
+            
+            li.appendChild(span);
             ul.appendChild(li);
         });
 
@@ -76,12 +99,17 @@ function record_score()
     var name = name_input.value;
     
     // vérification de la longueur du pseudo du joueur 
-    if(name.length < 3)
-        alert("Merci de saisir un pseudo d'au moins 3 caractères !");
-    else if (name.length > 20)
-        alert("Merci de saisir un pseudo de moins de 20 caractères !");
+    if(name.length < 3 || name.length > 20)
+    {
+        input_error.style.display = 'inline'; 
+        name_input.style.border = '1px solid red';
+    }
     else
     {
+        // on cache le message d'erreur
+        input_error.style.display = 'inline';
+        name_input.style.border = 'none';
+        
         // xhr pour enregistrer le score
         var xhr = new XMLHttpRequest();
         var params = 'nom='+name+'&temps='+time_elapsed;

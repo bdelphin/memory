@@ -15,8 +15,10 @@
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
         <script src="https://kit.fontawesome.com/50dfd902e3.js" crossorigin="anonymous"></script>
 
-        <!-- CSS Stylesheet -->
+        <!-- CSS Stylesheets -->
         <link rel="stylesheet" href="./css/style.css">
+        <link rel="stylesheet" href="./css/game.css">
+        <link rel="stylesheet" href="./css/controls.css">
     </head>
     <body>
 
@@ -46,13 +48,13 @@
             <button class="button" onclick="launch(240)">Difficulté facile</button>
             <button class="button" onclick="launch(120)">Difficulté normale</button>
             <button class="button" onclick="launch(60)">Difficulté élevée</button>
-            <h2>
+            <h3>
                 <i class="fas fa-angle-down"></i>
                 <i class="fas fa-angle-up"></i>
                 <i class="fas fa-angle-down"></i>
                 <i class="fas fa-angle-up"></i>
                 <i class="fas fa-angle-down"></i>
-            </h2>
+            </h3>
             <h2>Meilleurs temps :</h2>
             <div id="highscores">
                 Aucun meilleur temps enregistré.
@@ -68,12 +70,12 @@
 
         <!-- Écran de fin -->
         <div class="screen" id="game_won">
-            <!-- <img src="./gameover.webp" alt="space invader game over"> -->
             <h2>Bravo, vous avez gagné !</h2>
             <span id="new_highscore"><i class="fas fa-medal"></i> NOUVEAU RECORD ! <i class="fas fa-medal"></i></span>
             <h4>Partie terminée en <span id="score"></span> secondes.</h4>
-            <p>Saisissez votre nom pour la postérité !</p>
-            <input type="text" id="name" name="name" required minlength="3" maxlength="50" size="20"><br/>
+            <p>Saisissez votre nom/pseudo pour la postérité !</p>
+            <p id="input_error">Merci de saisir un pseudo entre 3 et 20 caractères de longueur.</p>
+            <input type="text" id="name" name="name" required minlength="3" maxlength="20" placeholder="Nom/Pseudo" size="30"><br/>
             <button class="button" onclick="record_score()">Enregister votre score & retourner au menu</button>
         </div>
 
@@ -82,7 +84,8 @@
             <a href="https://github.com/bdelphin/memory/" title="Github"><i class="fab fa-github"></i></a>
             <a href="https://hub.docker.com/repository/docker/bdelphin/memory/" title="Docker"><i class="fab fa-docker"></i></a>
             <a href="https://twitter.com/chewb4president" title="Twitter"><i class="fab fa-twitter"></i></a>
-            <a href="https://baptistedelphin.fr/" title="Website"><i class="fas fa-globe-americas"></i></i></a>
+            <a href="https://baptistedelphin.fr/" title="Website"><i class="fas fa-globe-americas"></i></a>
+            <a href="https://www.linkedin.com/in/bdelphin/" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
         </div>
 
         <!-- Javascript files -->

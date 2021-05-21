@@ -1,5 +1,5 @@
 /*
- *  Memory Game
+ *  MEMORY
  *  fichier screen.js
  *  
  *  Ce fichier contient les fonctions permettant
@@ -46,10 +46,26 @@ function game_won()
     if (highscores.length > 0)
     {
         if (time_elapsed < highscores[0]['temps'])
-            new_highscore_span.style.display = 'inline';
+        {
+            new_highscore_span.innerHTML = '<i class="fas fa-medal" style="color: #DAA520;"></i> Nouveau meilleur temps, bravo !';
+        }
+        else if(time_elapsed < highscores[1]['temps'])
+        {
+            new_highscore_span.innerHTML = '<i class="fas fa-medal" style="color: #C0C0C0;"></i> Deuxième place, presque !';
+        }
+        else if(time_elapsed < highscores[2]['temps'])
+        {
+            new_highscore_span.innerHTML = '<i class="fas fa-medal" style="color: #cd7f32;"></i> Troisième place, c\'est déjà pas mal.';
+        }
+        else
+        {
+            new_highscore_span.innerHTML = 'Tu n\'as pas atteint le podium, encore un peu de boulot.'; 
+        }
     }
     else
-        new_highscore_span.style.display = 'inline';
+    {
+        new_highscore_span.innerHTML = '<i class="fas fa-medal" style="color: #DAA520;"></i> Nouveau meilleur temps, bravo !';
+    }
 
     // on stoppe le refresh de la progress bar et on stop le chrono du jeu
     clearInterval(refresh_interval);

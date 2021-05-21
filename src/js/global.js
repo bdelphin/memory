@@ -31,7 +31,7 @@ var backend_url = "backend.php";
 
 // pour stocker le temps imparti et temps écoulé en secondes
 var time_allowed;
-var time_elapsed;
+var time_elapsed = 0;
 
 // pour stocker le nombre de paires trouvées.
 // quand cette variable vaut 14, la partie est gagnée !

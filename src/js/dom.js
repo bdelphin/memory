@@ -1,11 +1,11 @@
 /*
- *  Memory Game
+ *  MEMORY
  *  fichier dom.js
  *  
  *  Ce fichier contient la sélection des différents 
- *  éléments du DOM nécessaires aux fonction JS.
+ *  éléments du DOM nécessaires aux fonctions JS.
  *
- *  Baptiste DELPHIN - 19/05/2021
+ *  Baptiste DELPHIN - Mai 2021
  *
  */
 
@@ -27,3 +27,13 @@ var highscores_div = document.getElementById('highscores');
 var new_highscore_span = document.getElementById('new_highscore');
 var score_span = document.getElementById('score');
 var name_input = document.getElementById('name');
+var input_error = document.getElementById('input_error');
+
+// on ajoute la possibilité de valider son score en appuyant sur Entrée
+name_input.addEventListener("keyup", function(event) {
+    event.preventDefault();
+    if (event.keyCode === 13)
+    {
+        record_score();
+    }
+});

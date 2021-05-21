@@ -10,72 +10,60 @@
  *
  */
 
-// variables globales
-var cards = new Array(28); // les cartes sont stockées dans un tableau
-var selected_cards = new Array(2); // la "main" (2 cartes sélectionnées) aussi
-
-var clickable = true;
-
-var highscores;
-
-var refresh_interval;
-var game_timeout;
-
-var backend_url = "backend.php";
-
-// temps imparti et temps écoulé en secondes
-var time_allowed = 60;
-var time_elapsed = 0;
-
-var pairs_found = 0;
-
-// on appelle get_highscores pour mettre à jour les highscores
+// On met à jour les highscores au lancement
 get_highscores();
 
 function launch(time)
 {
-    // on réinitialise les paramètres du jeu
+    // On réinitialise les paramètres du jeu.
     reset_parameters();
 
-    // on met à jour le temps imparti en fonction de la difficulté choisie
+    // On met à jour le temps imparti en fonction de la 
+    // difficulté choisie.
     time_allowed = time;
     time_left_span.textContent = time;
 
     // on affiche l'écran de jeu
     switch_to_screen(game_screen);
 
-    // on remplit les tableaux avec des 'x'
+    // On remplit les tableaux avec des 'x'.
+    // Ces 'x' indiqueront qu'aucune carte n'est sélectionnée
+    // ou dans le cas du tableau que la cellule n'a pas encore
+    // de carte assignée.
     cards.fill('x');
     selected_cards.fill('x');
 
     for(var i = 0; i < 28; i++)
     {
-        // si la carte n'a pas déjà été définie
+        // Si la carte n'a pas déjà été définie :
         if (cards[i] == 'x')
         {
-            // on sélectionne au hasard la première carte qui va composer la paire
+            // On sélectionne au hasard la première carte qui va 
+            // composer la paire.
             var card = Math.floor(Math.random() * 18) + 1;
             while(cards.includes(card))
             {
-                // si/tant que cette carte est déjà dans le tableau, on en choisi une autre
+                // Si/tant que cette carte est déjà dans le 
+                // tableau, on en choisi une autre
                 card = Math.floor(Math.random() * 18) + 1;
             }
             // on place cette carte à la position i
             cards[i] = card;
             
-            // on séléctionne ensuite au hasard la seconde position de cette carte
+            // On séléctionne ensuite au hasard la seconde 
+            // position de cette carte.
             var next = Math.floor(Math.random() * 28);
             while(next == i || cards[next] != 'x')
             {
-                // si/tant que c'est la même position que i OU que la seconde position 
-                // est déjà définie, on en choisi une autre
+                // Si/tant que c'est la même position que i OU que la
+                // seconde position est déjà définie, on en choisi une autre
                 next = Math.floor(Math.random() * 28);
             }
             cards[next] = card;
         }
     }
     
-    // creation des cellules de la grille
+    // Creation des cellules de la grille
     for(var i = 0; i < 28; i++)
     {
         var cell = document.createElement('div');
@@ -87,11 +75,12 @@ function launch(time)
         grid.appendChild(cell);
     }
 
-    // lancement du chrono d'actualisation & du chrono global
+    // Lancement du chrono d'actualisation & du chrono global
     refresh_interval = setInterval(function() { time_elapsed += 1; refresh_progress_bar(); }, 1000);
     game_timeout = setTimeout(function() { game_over(); }, time_allowed*1000);
 }
 
+// Cette fonction réinitialise les paramètres du jeu
 function reset_parameters()
 {
     cards = new Array(28);
@@ -100,6 +89,7 @@ function reset_parameters()
     pairs_found = 0;
 }
 
+// Cette fonction actualise la progress bar et le temps restant
 function refresh_progress_bar()
 {
     // calcul de la progression
@@ -111,6 +101,8 @@ function refresh_progress_bar()
     time_left_span.textContent = time_left;
 }
 
+// Fonction appelée lors du clic sur une carte.
+// L'algorithme utilisé est expliqué sur le repo Github.
 function click_card(event)
 {
     // on récupère la carte sur laquelle on vient de cliquer
@@ -119,7 +111,7 @@ function click_card(event)
     // si les cartes sont clickables
     if (clickable == true)
     {
-        card.style.backgroundImage = "url(../assets/cards.png)";
+        card.style.backgroundImage = "url(./assets/cards.png)";
         if(selected_cards[0] == 'x')
         {
             // on vient de sélectionner la première carte
@@ -128,9 +120,9 @@ function click_card(event)
         }
         else if (card != selected_cards[0])
         {
-            // on vient de sélectionner la deuxième carte, on stocke
+            // on vient de sélectionner la deuxième carte, on la stocke
             selected_cards[1] = card;
-            // et on compare
+            // et on compare les deux cartes de la "main" !
             if(cards[selected_cards[0].id] == cards[selected_cards[1].id])
             {
                 // elles sont identiques !
@@ -142,20 +134,25 @@ function click_card(event)
                 selected_cards[1].removeEventListener("click", click_card, true);
                 selected_cards[1].style.cursor = "not-allowed";
 
+                // On vide la "main", en remettant 'x' dans ce tableau
                 selected_cards[0] = 'x';
                 selected_cards[1] = 'x';
 
-                // on vérifie si on a découvert les 14 paires
+                // On vérifie si on a découvert les 14 paires
                 if(pairs_found == 14)
                 {
-                    // partie gagnée !
+                    // La partie est gagnée !
                     game_won();
                 }
             }
             else
             {
+                // Si les deux cartes ne sont pas identiques :
+                // On rend toutes les cartes "non-clickables" pendant une seconde.
                 clickable = false;
-                // si elles ne sont pas identiques, on les cache 2 secondes plus tard
+
+                // Une fois cette seconde écoulée, on cache les deux cartes
+                // et on rend les cartes clickables.
                 setTimeout(function(){ 
                     selected_cards[0].style.backgroundImage = 'none';
                     selected_cards[1].style.backgroundImage = 'none';
