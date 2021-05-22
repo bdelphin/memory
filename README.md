@@ -4,7 +4,7 @@ Une implémentation simple en HTML/CSS/JS & PHP (pour la gestion des meilleurs t
 
 ![Screenshot du jeu](docs/screenshot.png)
 
-Vous pouvez accéder à la dernière version du jeu ici : [http://memory.bdelph.in](http://memory.bdelph.in)<br/>
+Vous pouvez accéder à la dernière version du jeu ici : [https://memory.bdelph.in](https://memory.bdelph.in)<br/>
 (vous trouverez plus d'informations sur le fonctionnement de cet hébergement ci-dessous)
 
 ## Règle du jeu
@@ -154,7 +154,7 @@ Vous trouverez ci-dessous le fonctionnement détaillé de ces deux fonctions, so
 
 ## Hébergement memory.bdelph.in / Déploiement continu
 
-Le jeu accessible à l'adresse [http://memory.bdelph.in](http://memory.bdelph.in) est hébergé sur un cluster Docker Swarm composé de 3 machines virtuelles AWS EC2.
+Le jeu accessible à l'adresse [https://memory.bdelph.in](https://memory.bdelph.in) est hébergé sur un cluster Docker Swarm composé de 3 machines virtuelles AWS EC2.
 Chaque machine du Swarm héberge deux réplicats (deux conteneurs faisant tourner l'image Docker du jeu) et le réseau est configuré en mode "Ingress" (le load balancer interne de Docker Swarm).
 
 ![capture d'écran cluster Docker Swarm](docs/swarm_cluster.png)
