@@ -1,5 +1,5 @@
 /*
- *  Memory Game
+ *  MEMORY
  *  fichier global.js
  *  
  *  Ce fichier contient les variables globales

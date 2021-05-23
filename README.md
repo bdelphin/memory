@@ -115,7 +115,7 @@ La base de données SQLite n'est pas protégée est peut être téléchargée en
 
 ## Utiliser MySQL/MariaDB plutôt que SQLite
 
-Si vous souhaitez utiliser MariaDB ou MySQL à la place d'un simple fichier SQLite, il faut simplement paramétrer les variables d'environnement suivantes :
+Si vous souhaitez utiliser MariaDB ou MySQL à la place d'un simple fichier SQLite, il faut simplement paramétrer les variables d'environnement suivantes (attention, les variables sont sensibles à la casse):
 - **DB_PROVIDER** : le SGBD à utiliser, au choix entre MariaDB, MySQL et SQLite. Si cette variable n'est pas définie, SQLite sera le choix par défaut.
 - **MYSQL_HOST** : le nom d'hôte ou l'adresse IP de la machine hébergeant MySQL ou MariaDB. Peut être localhost si le SGBD est sur la même machine que le serveur web.
 - **MYSQL_USER** : le nom d'utilisateur à utiliser pour se connecter au SGBD.
@@ -178,7 +178,7 @@ Vous trouverez une ébauche de tutoriel/guide pour monter une infra similaire da
 ## Améliorations possibles
 
 Voici une liste d'améliorations possibles pour ce jeu :
-- empêcher la triche : il est pour l'instant possible de tricher, et de soumettre un temps de jeu erroné. 
+- empêcher la triche : il est pour l'instant possible de tricher, et de soumettre un temps de jeu erroné.
 - améliorations graphiques : le design du jeu pourrait grandement être amélioré.
 - compatibilité mobile : le jeu n'est pas "responsive" dans sa version actuelle. Il faudrait pour le rendre jouable sur navigateur mobile inverser le nombre de colonnes et de lignes, et faire en sorte que la taille des cartes d'adapte à la résolution de l'écran.
 

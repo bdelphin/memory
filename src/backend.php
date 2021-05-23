@@ -1,7 +1,7 @@
 <?php
 
 /*
- *  Memory Game
+ *  MEMORY
  *  fichier backend.php
  *  
  *  Ce fichier est le backend de l'application.
@@ -15,15 +15,6 @@
  *  Baptiste DELPHIN - Mai 2021
  *
  */
-
-// Ceci aurait dû empêcher les accès à l'API depuis l'extérieur, mais à cause
-// du réseau Ingress de docker swarm cela ne fonctionne pas ...
-/*if($_SERVER['REMOTE_ADDR'] != '127.0.0.1' || !str_starts_with($_SERVER['REMOTE_ADDR'], '10.0.0.'))
-{
-    echo "Host ".$_SERVER['REMOTE_ADDR']." unauthorized.";
-    die;
-}*/
-
 
 // On commence par vérifier si la variable d'environnement DB_PROVIDER 
 // est définie ou non
@@ -114,9 +105,6 @@ else
     echo "Incorrect DBMS in env var DB_PROVIDER. Supported DBMS are SQLite, MariaDB or MySQL.";
     die();
 }
-
-
-
 
 // s'il y a des données en POST, c'est qu'on envoie un nouveau highscore.
 // on utilise !empty() plutôt que isset() afin de gérer le fait que les

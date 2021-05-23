@@ -1,5 +1,5 @@
 /*
- *  Memory Game
+ *  MEMORY
  *  fichier game.js
  *  
  *  Ce fichier contient les fonctions principales 
